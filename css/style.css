@@ -53,8 +53,8 @@ body {
 #game-canvas {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: env(safe-area-inset-left, 0px);
+    width: calc(100% - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
     height: 100%;
     background: #2a2a4a;
     image-rendering: pixelated;
@@ -72,6 +72,8 @@ body {
         max-height: 100vh;
     }
     #game-canvas {
+        left: 0;
+        width: 100%;
         border: 2px solid #444;
     }
 }
@@ -81,8 +83,8 @@ body {
     display: none;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: env(safe-area-inset-left, 0px);
+    width: calc(100% - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
     height: 100%;
     pointer-events: none;
     z-index: 10;
